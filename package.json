@@ -4,7 +4,9 @@
     "version": "1.0.0",
     "description": "identity - Logo and Images representing ticket721",
     "main": "index.js",
-    "scripts": {},
+    "scripts": {
+        "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"
+    },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/ticket721/identity.git"
@@ -24,7 +26,13 @@
     ],
     "husky": {
         "hooks": {
-            "pre-commit": "editorconfig-cli"
+            "pre-commit": "editorconfig-cli",
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
         }
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^7.5.2",
+        "@commitlint/config-conventional": "^7.5.0",
+        "conventional-changelog-cli": "^2.0.12"
     }
 }
